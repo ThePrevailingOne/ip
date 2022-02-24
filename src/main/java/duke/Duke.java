@@ -138,7 +138,10 @@ public class Duke {
         String properResponse = "";
         try {
             checkEmpty(userInput);
+            assert(!userInput.isEmpty());
             Object[] parseResult = InputParser.parseInput(userInput);
+            assert(parseResult[0] instanceof InputType);
+            assert(parseResult[1] instanceof String[]);
             InputType inputType = (InputType) parseResult[0];
             String[] value = (String[]) parseResult[1];
 
